@@ -1,3 +1,3 @@
 library crypted_preferences;
 
-export 'src/preferences.dart';
+export 'src/preferences_base.dart';

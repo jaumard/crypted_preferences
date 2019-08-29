@@ -3,7 +3,7 @@ Flutter preferences management with crypto capabilities
 
 For now preferences are not crypted, I'm waiting for FFI to land :) 
 
-But you can still use this package to have multiple preferences files.
+But you can still use this package to have multiple preferences files in Desktop, mobile and web.
 
 ## Usage 
 
