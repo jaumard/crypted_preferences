@@ -20,19 +20,30 @@ await preferences.setBool('boolKey', false);
 
 Getter have an optional param `defaultValue` if the preference if not set.
 
-dynamic get(key)
-bool getBool(key)
-Future<bool> setBool(key, value)
-int getInt(key)
-Future<bool> setInt(key, value)
-double getDouble(key)
-Future<bool> setDouble(key, value)
-String getString(key)
-Future<bool> setString(key, value)
-List<String> getStringList(key)
-Future<bool> setStringList(key, value)
+`dynamic get(key)`
+
+`bool getBool(key)`
+
+`Future<bool> setBool(key, value)`
+
+`int getInt(key)`
+
+`Future<bool> setInt(key, value)`
+
+`double getDouble(key)`
+
+`Future<bool> setDouble(key, value)`
+
+`String getString(key)`
+
+`Future<bool> setString(key, value)`
+
+`List<String> getStringList(key)`
+
+`Future<bool> setStringList(key, value)`
 
 ### Custom object save as preferences
+
 You can use save custom object using the mixin `WithPreferencesSerializable` on your class, it will serialize your object into a map to save it.
 
 Retrieve an object from a preference key:
