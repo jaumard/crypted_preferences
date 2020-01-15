@@ -1,6 +1,6 @@
 name: crypted_preferences
 description: Flutter preferences management with crypto capabilities
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/jaumard/crypted_preferences
 repository: https://github.com/jaumard/crypted_preferences
 author: jaumard <jimmy.aumard@gmail.com>

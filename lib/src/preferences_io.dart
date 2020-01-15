@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -83,6 +84,7 @@ class IOPreferences extends Preferences {
 
   @override
   Future<bool> setValue(String key, Object value) async {
+    print("Setting value");
     if (key == null) {
       preferenceCache.clear();
       preferenceCache.addAll(value);
@@ -92,6 +94,17 @@ class IOPreferences extends Preferences {
       preferenceCache[key] = value;
     }
 
+    _markToSave();
+    return true;
+  }
+
+  Timer lastMarked;
+  _markToSave() {
+    lastMarked?.cancel();
+    lastMarked = Timer(Duration(milliseconds: 20), _makeSave);
+  }
+
+  _makeSave() async {
     if (filePath != null) {
       final file = File(filePath);
       if (isCrypted) {
@@ -100,10 +113,9 @@ class IOPreferences extends Preferences {
       try {
         await file.writeAsString(json.encode(preferenceCache));
       } catch (err) {
-        return false;
+        print(err);
       }
     }
-    return true;
   }
 
   /// Completes with true once the user preferences for the app has been cleared.
