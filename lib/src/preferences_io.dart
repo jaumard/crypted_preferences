@@ -84,7 +84,6 @@ class IOPreferences extends Preferences {
 
   @override
   Future<bool> setValue(String key, Object value) async {
-    print("Setting value");
     if (key == null) {
       preferenceCache.clear();
       preferenceCache.addAll(value);
